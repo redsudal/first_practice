@@ -1,6 +1,5 @@
 #pragma once
 
-#include "pch.h"
 
 // 싱글톤 패턴
 // 객체의 생성을 1개로 제한
@@ -46,15 +45,9 @@ class CCore
 private:
 	HWND	m_hWnd;
 	POINT	m_ptResolution;
-	HDC		m_hDC;
-
 public:
 	int init(HWND _hWnd, POINT _ptResolution);
 	void progress();
-
-private:
-	void update();
-	void render();
 
 
 private:

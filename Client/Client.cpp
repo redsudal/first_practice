@@ -76,7 +76,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                 DispatchMessage(&msg);
             }
         }
-
         // 메세지가 발생하지 않는 대부분의 시간
         else
         {
@@ -157,145 +156,52 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 //
 
-#include <vector>
-
-using std::vector;
-
-struct tObjInfo
-{
-    POINT g_ptObjPos;
-    POINT g_ptObjScale;
-};
-
-vector<tObjInfo> g_vecInfo;
-
-POINT g_ptLT;
-POINT g_ptRB;
-
-bool bLbtnDown = false;
-
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
     {
     case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-
-            HDC hdc = BeginPaint(hWnd, &ps);
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-
-
-            HPEN hRedPen = CreatePen(PS_SOLID, 5, RGB(255, 0, 0));
-            HBRUSH hBlueBrush = CreateSolidBrush(RGB(0, 0, 255));
-
-            HPEN hDefaultPen = (HPEN)SelectObject(hdc, hRedPen);
-            HBRUSH hDefaultBrush = (HBRUSH)SelectObject(hdc, hBlueBrush);
-
-            if (bLbtnDown)
-            {
-                Rectangle(hdc,
-                    g_ptLT.x, g_ptLT.y,
-                    g_ptRB.x, g_ptRB.y);
-            }
-           
-
-            SelectObject(hdc, hDefaultPen);
-            SelectObject(hdc, hDefaultBrush);
-
-            DeleteObject(hRedPen);
-            DeleteObject(hBlueBrush);
-
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_KEYDOWN:
     {
-        switch (wParam)
+        int wmId = LOWORD(wParam);
+        // 메뉴 선택을 구문 분석합니다:
+        switch (wmId)
         {
-        /*case VK_UP:
-            g_ptObjPos.y -= 10;
-            InvalidateRect(hWnd, nullptr, true);
-
+        case IDM_ABOUT:
+            DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
             break;
-        case VK_DOWN:
-            g_ptObjPos.y += 10;
-            InvalidateRect(hWnd, nullptr, true);
-
+        case IDM_EXIT:
+            DestroyWindow(hWnd);
             break;
-        case VK_RIGHT:
-            g_ptObjPos.x += 10;
-            InvalidateRect(hWnd, nullptr, true);
-
-            break;
-        case VK_LEFT:
-            g_ptObjPos.x -= 10;
-            InvalidateRect(hWnd, nullptr, true);
-
-            break;*/
-        case WM_LBUTTONDOWN:
-        {
-            bLbtnDown = true;
-            g_ptLT.x = LOWORD(lParam);
-            g_ptLT.y = HIWORD(lParam);
-        }
-            break;
-        case WM_MOUSEMOVE:
-        {
-            g_ptRB.x = LOWORD(lParam);
-            g_ptRB.y = HIWORD(lParam);
-            InvalidateRect(hWnd, nullptr, true);
-        }
-            break;
-        case WM_LBUTTONUP:
-        {
-            g_ptLT.x = LOWORD(lParam);
-            g_ptLT.y = HIWORD(lParam);
-
-            tObjInfo info = {};
-            info.g_ptObjPos.x = (g_ptLT.x + g_ptRB.x) / 2;
-            info.g_ptObjPos.y = (g_ptLT.y + g_ptRB.y) / 2;
-
-            info.g_ptObjScale.x = abs(g_ptLT.x - g_ptRB.x);
-            info.g_ptObjScale.y = abs(g_ptLT.y - g_ptRB.y);
-
-            g_vecInfo.push_back(info);
-
-            bLbtnDown = false;
-
-            InvalidateRect(hWnd, nullptr, true);
-        }
-            break;
+        default:
+            return DefWindowProc(hWnd, message, wParam, lParam);
         }
     }
-        break;
+    break;
 
+    case WM_PAINT:
+    {
+        //PAINTSTRUCT ps;
+
+        //HDC hdc = BeginPaint(hWnd, &ps);
+        //// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+
+        //Rectangle(hdc, 1180, 668, 1280, 768);
+
+        //EndPaint(hWnd, &ps);
+    }
+    break;
 
     case WM_DESTROY:
+    {
         PostQuitMessage(0);
         break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }
+    }
     return 0;
 }
+
 
 // 정보 대화 상자의 메시지 처리기입니다.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
