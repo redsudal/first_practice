@@ -17,6 +17,12 @@
     <Filter Include="Engine\01. Header">
       <UniqueIdentifier>{3a9c1227-de99-45bc-bf13-3249bec53a54}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Manager">
+      <UniqueIdentifier>{7495ee0a-1518-4502-92bc-18d725106651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Manager\KeyMgr">
+      <UniqueIdentifier>{d4cb5083-8ecf-4db2-91d6-137330309d10}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -34,6 +40,13 @@
     <ClInclude Include="CCore.h">
       <Filter>Engine\02. Core</Filter>
     </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyMgr.h">
+      <Filter>Engine\Manager\KeyMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -54,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="CCore.cpp">
       <Filter>Engine\02. Core</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyMgr.cpp">
+      <Filter>Engine\Manager\KeyMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
