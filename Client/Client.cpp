@@ -178,18 +178,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     }
     break;
 
-    case WM_PAINT:
-    {
-        //PAINTSTRUCT ps;
+    //case WM_PAINT:
+    //{
+    //    //PAINTSTRUCT ps;
 
-        //HDC hdc = BeginPaint(hWnd, &ps);
-        //// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+    //    //HDC hdc = BeginPaint(hWnd, &ps);
+    //    //// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 
-        //Rectangle(hdc, 1180, 668, 1280, 768);
+    //    //Rectangle(hdc, 1180, 668, 1280, 768);
 
-        //EndPaint(hWnd, &ps);
-    }
-    break;
+    //    //EndPaint(hWnd, &ps);
+    //}
+    //break;
 
     case WM_DESTROY:
     {

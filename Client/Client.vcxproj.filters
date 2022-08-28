@@ -17,14 +17,17 @@
     <Filter Include="Engine\01. Header">
       <UniqueIdentifier>{3a9c1227-de99-45bc-bf13-3249bec53a54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Manager">
-      <UniqueIdentifier>{7495ee0a-1518-4502-92bc-18d725106651}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\Manager\KeyMgr">
-      <UniqueIdentifier>{d4cb5083-8ecf-4db2-91d6-137330309d10}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\04.Object">
       <UniqueIdentifier>{0ffb9f3e-9fac-43db-8cef-b61b9ed7a28e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager">
+      <UniqueIdentifier>{7495ee0a-1518-4502-92bc-18d725106651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\KeyMgr">
+      <UniqueIdentifier>{d4cb5083-8ecf-4db2-91d6-137330309d10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\TimeMgr">
+      <UniqueIdentifier>{6e467add-d524-411d-bf96-88bece7b7a71}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,10 +50,18 @@
       <Filter>Engine\01. Header</Filter>
     </ClInclude>
     <ClInclude Include="CKeyMgr.h">
-      <Filter>Engine\Manager\KeyMgr</Filter>
+      <Filter>Engine\03.Manager\KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="CObject.h" />
+    <ClInclude Include="struct.h">
+      <Filter>Engine\01. Header</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimeMgr.h">
+      <Filter>Engine\03.Manager\TimeMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>Engine\04.Object</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -73,8 +84,13 @@
       <Filter>Engine\02. Core</Filter>
     </ClCompile>
     <ClCompile Include="CKeyMgr.cpp">
-      <Filter>Engine\Manager\KeyMgr</Filter>
+      <Filter>Engine\03.Manager\KeyMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CObject.cpp" />
+    <ClCompile Include="CTimeMgr.cpp">
+      <Filter>Engine\03.Manager\TimeMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>Engine\04.Object</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
