@@ -10,3 +10,6 @@
 				private:\
 					type();\
 					~type();
+
+#define DT CTimerMgr::GetInst()->GetDT()
+#define fDT CTimerMgr::GetInst()->GetfDT()
