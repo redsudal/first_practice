@@ -61,6 +61,7 @@ int CCore::init(HWND _hWnd, POINT _ptResolution)
 void CCore::progress()
 {
 	CTimeMgr::GetInst()->update();
+	CKeyMgr::GetInst()->update();
 
 	update();
 
@@ -71,22 +72,26 @@ void CCore::update()
 {
 	Vec2 vPos = g_obj.GetPos();
 
-	if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+	if (CKeyMgr::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::TAP 
+		|| CKeyMgr::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::HOLD)
 	{
-		vPos.x -= 200.f * CTimeMgr::GetInst()->GetfDT();
+		vPos.x -= 200.f *CTimeMgr::GetInst()->GetfDT();
 	}
 	
-	if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+	if (CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::TAP
+		|| CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::HOLD)
 	{
 		vPos.x += 200.f * CTimeMgr::GetInst()->GetfDT();
 	}	
 	
-	if (GetAsyncKeyState(VK_UP) & 0x8000)
+	if (CKeyMgr::GetInst()->GetKeyState(KEY::UP) == KEY_STATE::TAP
+		|| CKeyMgr::GetInst()->GetKeyState(KEY::UP) == KEY_STATE::HOLD)
 	{
 		vPos.y -= 200.f * CTimeMgr::GetInst()->GetfDT();
 	}	
 	
-	if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+	if (CKeyMgr::GetInst()->GetKeyState(KEY::DOWN) == KEY_STATE::TAP
+		|| CKeyMgr::GetInst()->GetKeyState(KEY::DOWN) == KEY_STATE::HOLD)
 	{
 		vPos.y += 200.f * CTimeMgr::GetInst()->GetfDT();
 	}
@@ -108,7 +113,8 @@ void CCore::render()
 				, int(vPos.y - vScale.y / 2.f)
 				, int(vPos.x + vScale.x / 2.f)
 				, int(vPos.y + vScale.y / 2.f));
-
+	// 이미지를 화면에 출력해주는 함수
+	
 	BitBlt(m_hDC, 0, 0, m_ptResolution.x, m_ptResolution.y
 			, m_memDC, 0, 0, SRCCOPY);
 }
