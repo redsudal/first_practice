@@ -41,6 +41,7 @@ struct tKeyInfo
 {
 	KEY_STATE	eState; // 키의 상태값
 	bool		bPrevPush;	// 이전 프레임에서 눌렸는지 여부
+	KEY_STATE	ePrevKeyState;
 };
 
 class CKeyMgr
