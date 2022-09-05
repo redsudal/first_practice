@@ -1,0 +1,34 @@
+#include "pch.h"
+#include "CSceneMgr.h"
+
+#include "CScene_Start.h"
+
+CSceneMgr::CSceneMgr():
+	m_pCurScene(nullptr),
+	m_arrScene{}
+{
+}
+
+CSceneMgr::~CSceneMgr()
+{
+	//씬 전부 삭제
+	for (UINT i = 0; i < (UINT)SCENE_TYPE::END; ++i)
+	{
+		if (m_arrScene[i] != nullptr)
+		{
+			delete m_arrScene[i];
+		}
+	}
+}
+
+void CSceneMgr::init()
+{
+	//Scene 생성
+	m_arrScene[(UINT)SCENE_TYPE::START] = new CScene_Start;
+	//m_arrScene[(UINT)SCENE_TYPE::TOOL] = new CScene_Tool;
+	//m_arrScene[(UINT)SCENE_TYPE::START] = new CScene_Start;
+	//m_arrScene[(UINT)SCENE_TYPE::START] = new CScene_Start;
+
+	// 현재 씬 설정
+	m_pCurScene = m_arrScene[(UINT)SCENE_TYPE::START];
+}

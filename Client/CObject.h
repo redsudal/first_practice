@@ -7,7 +7,7 @@ private:
 	Vec2 m_vScale;
 public:
 	CObject();
-	~CObject();
+	virtual ~CObject();
 
 public:
 	void SetPos(Vec2 _vPos) { m_vPos = _vPos; }

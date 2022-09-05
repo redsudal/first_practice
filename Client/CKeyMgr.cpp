@@ -82,6 +82,7 @@ void CKeyMgr::update()
 
 		}
 	}
+	// Æ÷Ä¿½Ì ÁßÀÌ ¾Æ´Ò¶§
 	else
 	{
 		for (int i = 0; i < (int)KEY::LAST; ++i)

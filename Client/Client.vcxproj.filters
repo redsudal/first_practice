@@ -11,12 +11,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Engine\02. Core">
-      <UniqueIdentifier>{2d75724f-d4f3-4103-836d-74d1d80548f0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Engine\01. Header">
-      <UniqueIdentifier>{3a9c1227-de99-45bc-bf13-3249bec53a54}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\04.Object">
       <UniqueIdentifier>{0ffb9f3e-9fac-43db-8cef-b61b9ed7a28e}</UniqueIdentifier>
     </Filter>
@@ -28,6 +22,27 @@
     </Filter>
     <Filter Include="Engine\03.Manager\TimeMgr">
       <UniqueIdentifier>{6e467add-d524-411d-bf96-88bece7b7a71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\01.Header">
+      <UniqueIdentifier>{3a9c1227-de99-45bc-bf13-3249bec53a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\02.Core">
+      <UniqueIdentifier>{2d75724f-d4f3-4103-836d-74d1d80548f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene">
+      <UniqueIdentifier>{9a91637c-defe-4913-ab39-190b0a13bb9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\03.Manager\SceneMgr">
+      <UniqueIdentifier>{6acad63e-9b7e-4daf-b470-62eabe5d5e21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\Scene_Start">
+      <UniqueIdentifier>{52367702-dc23-4eef-949e-9dfdad405372}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\Scene_Tool">
+      <UniqueIdentifier>{e9bc90b8-1889-41e0-a391-ca921266cb5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\05.Scene\Scene">
+      <UniqueIdentifier>{e97c9af5-5b36-4bad-8dd8-2d2484b2d21f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,23 +59,32 @@
       <Filter>Default</Filter>
     </ClInclude>
     <ClInclude Include="CCore.h">
-      <Filter>Engine\02. Core</Filter>
+      <Filter>Engine\02.Core</Filter>
     </ClInclude>
     <ClInclude Include="define.h">
-      <Filter>Engine\01. Header</Filter>
+      <Filter>Engine\01.Header</Filter>
     </ClInclude>
     <ClInclude Include="CKeyMgr.h">
       <Filter>Engine\03.Manager\KeyMgr</Filter>
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="struct.h">
-      <Filter>Engine\01. Header</Filter>
+      <Filter>Engine\01.Header</Filter>
     </ClInclude>
     <ClInclude Include="CTimeMgr.h">
       <Filter>Engine\03.Manager\TimeMgr</Filter>
     </ClInclude>
     <ClInclude Include="CObject.h">
       <Filter>Engine\04.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="CSceneMgr.h">
+      <Filter>Engine\03.Manager\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene_Start.h">
+      <Filter>Engine\05.Scene\Scene_Start</Filter>
+    </ClInclude>
+    <ClInclude Include="CScene.h">
+      <Filter>Engine\05.Scene\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -81,7 +105,7 @@
       <Filter>Default</Filter>
     </ClCompile>
     <ClCompile Include="CCore.cpp">
-      <Filter>Engine\02. Core</Filter>
+      <Filter>Engine\02.Core</Filter>
     </ClCompile>
     <ClCompile Include="CKeyMgr.cpp">
       <Filter>Engine\03.Manager\KeyMgr</Filter>
@@ -91,6 +115,15 @@
     </ClCompile>
     <ClCompile Include="CObject.cpp">
       <Filter>Engine\04.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="CSceneMgr.cpp">
+      <Filter>Engine\03.Manager\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene_Start.cpp">
+      <Filter>Engine\05.Scene\Scene_Start</Filter>
+    </ClCompile>
+    <ClCompile Include="CScene.cpp">
+      <Filter>Engine\05.Scene\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
