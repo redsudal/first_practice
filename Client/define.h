@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 // Singleton ¸ÅÅ©·Î
 #define SINGLE(type) public:\
 						static type* GetInst()\
@@ -11,8 +13,8 @@
 					type();\
 					~type();
 
-#define DT CTimerMgr::GetInst()->GetDT()
-#define fDT CTimerMgr::GetInst()->GetfDT()
+#define DT CTimeMgr::GetInst()->GetDT()
+#define fDT CTimeMgr::GetInst()->GetfDT()
 
 
 enum class GROUP_TYPE
