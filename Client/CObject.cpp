@@ -7,6 +7,7 @@
 CObject::CObject()
 	: m_vPos{}
 	, m_vScale{}
+	, eType{}
 {
 
 }
@@ -14,41 +15,6 @@ CObject::CObject()
 CObject::~CObject()
 {
 
-}
-
-void CObject::update()
-{
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::W) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::W) == KEY_STATE::HOLD
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::UP) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::UP) == KEY_STATE::HOLD)
-	{
-		m_vPos.y -= 200.f * fDT;
-	}
-	
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::S) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::S) == KEY_STATE::HOLD
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::DOWN) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::DOWN) == KEY_STATE::HOLD)
-	{
-		m_vPos.y += 200.f * fDT;
-	}
-	
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::A) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::A) == KEY_STATE::HOLD
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::LEFT) == KEY_STATE::HOLD)
-	{
-		m_vPos.x -= 200.f * fDT;
-	}
-	
-	if (CKeyMgr::GetInst()->GetKeyState(KEY::D) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::D) == KEY_STATE::HOLD
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::TAP
-		|| CKeyMgr::GetInst()->GetKeyState(KEY::RIGHT) == KEY_STATE::HOLD)
-	{
-		m_vPos.x += 200.f * fDT;
-	}
 }
 
 void CObject::render(HDC _dc)

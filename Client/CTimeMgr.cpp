@@ -7,7 +7,7 @@
 
 
 CTimeMgr::CTimeMgr()
-	:m_llCurCount{}
+	: m_llCurCount{}
 	, m_llFrequency{}
 	, m_llPrevCount{}
 	, m_dDT(0.)

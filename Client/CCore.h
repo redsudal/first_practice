@@ -55,6 +55,8 @@ public:
 	int init(HWND _hWnd, POINT _ptResolution);
 	void progress();
 
+	POINT GetResolution() { return m_ptResolution; }
+
 private:
 	//void update();
 	//void render();

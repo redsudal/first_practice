@@ -41,8 +41,20 @@
     <Filter Include="Engine\05.Scene\Scene_Tool">
       <UniqueIdentifier>{e9bc90b8-1889-41e0-a391-ca921266cb5d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\05.Scene\Scene">
-      <UniqueIdentifier>{e97c9af5-5b36-4bad-8dd8-2d2484b2d21f}</UniqueIdentifier>
+    <Filter Include="Engine\04.Object\Player">
+      <UniqueIdentifier>{d8b54a49-3933-4397-944f-fa741e4e1fc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\CObject">
+      <UniqueIdentifier>{c8db7889-94ac-4c72-be4b-69ba0c463db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Wall">
+      <UniqueIdentifier>{ea81bb89-01e6-4aac-877a-3103caf6d9da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Monster">
+      <UniqueIdentifier>{ee2b1ad1-74f1-4778-918e-955fd9bc51ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\04.Object\Missible">
+      <UniqueIdentifier>{370003ba-36a9-4afe-b65d-90f8b8de4aa0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +86,6 @@
     <ClInclude Include="CTimeMgr.h">
       <Filter>Engine\03.Manager\TimeMgr</Filter>
     </ClInclude>
-    <ClInclude Include="CObject.h">
-      <Filter>Engine\04.Object</Filter>
-    </ClInclude>
     <ClInclude Include="CSceneMgr.h">
       <Filter>Engine\03.Manager\SceneMgr</Filter>
     </ClInclude>
@@ -84,7 +93,22 @@
       <Filter>Engine\05.Scene\Scene_Start</Filter>
     </ClInclude>
     <ClInclude Include="CScene.h">
-      <Filter>Engine\05.Scene\Scene</Filter>
+      <Filter>Engine\05.Scene\Scene_Tool</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.h">
+      <Filter>Engine\04.Object\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="CObject.h">
+      <Filter>Engine\04.Object\CObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CWall.h">
+      <Filter>Engine\04.Object\Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="CMonster.h">
+      <Filter>Engine\04.Object\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="CMissible.h">
+      <Filter>Engine\04.Object\Missible</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +137,6 @@
     <ClCompile Include="CTimeMgr.cpp">
       <Filter>Engine\03.Manager\TimeMgr</Filter>
     </ClCompile>
-    <ClCompile Include="CObject.cpp">
-      <Filter>Engine\04.Object</Filter>
-    </ClCompile>
     <ClCompile Include="CSceneMgr.cpp">
       <Filter>Engine\03.Manager\SceneMgr</Filter>
     </ClCompile>
@@ -123,7 +144,22 @@
       <Filter>Engine\05.Scene\Scene_Start</Filter>
     </ClCompile>
     <ClCompile Include="CScene.cpp">
-      <Filter>Engine\05.Scene\Scene</Filter>
+      <Filter>Engine\05.Scene\Scene_Tool</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Engine\04.Object\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="CObject.cpp">
+      <Filter>Engine\04.Object\CObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CWall.cpp">
+      <Filter>Engine\04.Object\Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="CMonster.cpp">
+      <Filter>Engine\04.Object\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="CMissible.cpp">
+      <Filter>Engine\04.Object\Missible</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
