@@ -18,7 +18,6 @@ public:
 	virtual void Enter() = 0; // æ¿ ¡¯¿‘ Ω√ »£√‚
 	virtual void Exit() = 0; // æ¿ ≈ª√‚ Ω√ »£√‚
 
-protected:
 	void AddObject(CObject* _obj, GROUP_TYPE _grouptype)
 	{
 		m_arrObj[(UINT)_grouptype].push_back(_obj);

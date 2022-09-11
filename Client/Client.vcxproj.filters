@@ -53,7 +53,7 @@
     <Filter Include="Engine\04.Object\Monster">
       <UniqueIdentifier>{ee2b1ad1-74f1-4778-918e-955fd9bc51ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\04.Object\Missible">
+    <Filter Include="Engine\04.Object\Missile">
       <UniqueIdentifier>{370003ba-36a9-4afe-b65d-90f8b8de4aa0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -107,8 +107,8 @@
     <ClInclude Include="CMonster.h">
       <Filter>Engine\04.Object\Monster</Filter>
     </ClInclude>
-    <ClInclude Include="CMissible.h">
-      <Filter>Engine\04.Object\Missible</Filter>
+    <ClInclude Include="CMissile.h">
+      <Filter>Engine\04.Object\Missile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,8 +158,8 @@
     <ClCompile Include="CMonster.cpp">
       <Filter>Engine\04.Object\Monster</Filter>
     </ClCompile>
-    <ClCompile Include="CMissible.cpp">
-      <Filter>Engine\04.Object\Missible</Filter>
+    <ClCompile Include="CMissile.cpp">
+      <Filter>Engine\04.Object\Missile</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
