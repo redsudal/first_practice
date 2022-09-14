@@ -22,6 +22,8 @@
 #define KEY_AWAY(key) KEYCHECK(key, KEY_STATE::AWAY)
 #define KEY_NONE(key) KEYCHECK(key, KEY_STATE::NONE)
 
+#define PI 3.1415926535f
+
 enum class GROUP_TYPE
 {
 	DEFAULT,

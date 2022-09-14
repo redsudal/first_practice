@@ -4,7 +4,9 @@ class CPlayer :
     public CObject
 {
 public:
-    void CreateMissile();
+    void CreateMissileFront();
+    void CreateMissileRightSide();
+    void CreateMissileLeftSide();
 
 public:
     virtual void update();

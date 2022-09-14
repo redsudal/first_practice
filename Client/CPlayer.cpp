@@ -33,15 +33,17 @@ void CPlayer::update()
 		vPos.x += 200.f * fDT;
 	}
 
-	if (KEY_TAP(KEY::UP))
+	if (KEY_TAP(KEY::UP)/* || KEY_HOLD(KEY::UP)*/)
 	{
-		CreateMissile();
+		CreateMissileFront();
+		CreateMissileRightSide();
+		CreateMissileLeftSide();
 	}
 
 	SetPos(vPos);
 }
 
-void CPlayer::CreateMissile()
+void CPlayer::CreateMissileFront()
 {
 	Vec2 vMissilePos = GetPos();
 	vMissilePos.y -= GetScale().y / 2.f;
@@ -49,11 +51,39 @@ void CPlayer::CreateMissile()
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
 	pMissile->SetScale(Vec2(25.f, 25.f));
-	pMissile->SetDir(true);
+	pMissile->SetDir(Vec2(0.f, 1.f));
 
 	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
 	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);
 }
+
+void CPlayer::CreateMissileRightSide()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	CMissile* pMissile = new CMissile;
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(25.f, 25.f));
+
+	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
+	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);
+}
+
+void CPlayer::CreateMissileLeftSide()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	CMissile* pMissile = new CMissile;
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(25.f, 25.f));
+	pMissile->SetDir(Vec2(-1.f, 1.f));
+
+	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
+	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);
+}
+
 
 CPlayer::CPlayer()
 {
