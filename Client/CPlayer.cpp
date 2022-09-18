@@ -9,18 +9,14 @@
 #include "CSceneMgr.h"
 #include "CScene.h"
 
-#include "CPathMgr.h"
+#include "CResourceMgr.h"
 #include "CTexture.h"
 
 CPlayer::CPlayer()
 	: m_pTex(nullptr)
 {
 	// Texture 로딩하기
-	m_pTex = new CTexture;
-
-	wstring strFilePath = CPathMgr::GetInst()->GetContentPath();
-	strFilePath += L"Texture\\player.bmp";
-	m_pTex->load(strFilePath);
+	m_pTex = CResourceMgr::GetInst()->LoadTexture(L"PlayerTex", L"Texture\\player.bmp");
 }
 
 CPlayer::~CPlayer()
@@ -69,13 +65,6 @@ void CPlayer::render(HDC _dc)
 	int iHeight = (int)m_pTex->Height();
 
 	Vec2 vPos = GetPos();
-
-	//BitBlt(_dc
-	//	, vPos.x - (float)(iWidth / 2)
-	//	, vPos.y - (float)(iHeight / 2)
-	//	, iWidth, iHeight
-	//	, m_pTex->GetDC()
-	//	, 0, 0, SRCCOPY);
 
 	TransparentBlt(_dc
 		, int(vPos.x - (float)(iWidth / 2))

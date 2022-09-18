@@ -6,7 +6,7 @@ class CTexture :
 private:
     HDC         m_dc;
     HBITMAP     m_hBit;
-    BITMAP     m_bitInfo;
+    BITMAP      m_bitInfo;
 
 public:
     void load(const wstring& _strFilePath);
