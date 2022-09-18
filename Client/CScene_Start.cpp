@@ -6,6 +6,9 @@
 #include "CMonster.h"
 #include "CCore.h"
 
+#include "CPathMgr.h"
+#include "CTexture.h"
+
 CScene_Start::CScene_Start()
 {
 
@@ -18,6 +21,15 @@ CScene_Start::~CScene_Start()
 
 void CScene_Start::Enter()
 {
+	// Texture 로딩하기
+	CTexture* pTexture = new CTexture;
+
+	wstring strFilePath = CPathMgr::GetInst()->GetContentPath();
+	strFilePath += L"Texture\\bmp_24.bmp";
+	pTexture->load(strFilePath);
+
+	delete pTexture;
+
 	// Object 추가
 	CObject* pObj = new CPlayer;
 	pObj->SetPos(Vec2(640.f, 380.f));
