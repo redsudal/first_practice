@@ -68,6 +68,9 @@
     <Filter Include="Engine\03.Manager\PathMgr">
       <UniqueIdentifier>{3f6c3df4-28a9-475b-8b42-aa002b121eb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\03.Manager\ResorceMgr">
+      <UniqueIdentifier>{97ef7e27-e10b-4e0c-9be9-929ddfa5fa98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h">
@@ -134,6 +137,9 @@
     <ClInclude Include="CPathMgr.h">
       <Filter>Engine\03.Manager\PathMgr</Filter>
     </ClInclude>
+    <ClInclude Include="CResourceMgr.h">
+      <Filter>Engine\03.Manager\ResorceMgr</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -196,6 +202,9 @@
     </ClCompile>
     <ClCompile Include="CPathMgr.cpp">
       <Filter>Engine\03.Manager\PathMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="CResourceMgr.cpp">
+      <Filter>Engine\03.Manager\ResorceMgr</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

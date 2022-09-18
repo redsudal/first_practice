@@ -55,12 +55,14 @@ public:
 	int init(HWND _hWnd, POINT _ptResolution);
 	void progress();
 
-	POINT GetResolution() { return m_ptResolution; }
+	
 
 private:
 	//void update();
 	//void render();
 
 public:
-	HWND GetMainHwnd() { return m_hWnd; }
+	HWND  GetMainHwnd() { return m_hWnd; }
+	HDC	  GetMainDC() { return m_hDC; }
+	POINT GetResolution() { return m_ptResolution; }
 };

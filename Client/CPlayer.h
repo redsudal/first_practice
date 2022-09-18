@@ -1,15 +1,22 @@
 #pragma once
 #include "CObject.h"
+
+class CTexture;
+
 class CPlayer :
     public CObject
 {
-public:
+private:
+    CTexture*   m_pTex;
+
+private:
     void CreateMissileFront();
     void CreateMissileRightSide();
     void CreateMissileLeftSide();
 
 public:
     virtual void update();
+    virtual void render(HDC _dc);
 
 public:
     CPlayer();
