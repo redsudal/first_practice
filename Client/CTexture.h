@@ -7,6 +7,12 @@ private:
     HDC         m_dc;
     HBITMAP     m_hBit;
 
+
+public:
+    void load(const wstring& _strFilePath);
+
+
+
 public:
     CTexture();
     ~CTexture();

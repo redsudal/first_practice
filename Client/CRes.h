@@ -11,5 +11,9 @@ public:
 
 	const wstring& GetKey() { return m_strKey; }
 	const wstring& GetRelativePath() { return m_strRelativePath; }
+
+public:
+	CRes();
+	~CRes();
 };
 

@@ -65,6 +65,7 @@ void CPlayer::CreateMissileRightSide()
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
 	pMissile->SetScale(Vec2(25.f, 25.f));
+	pMissile->SetDir(Vec2(1.f, 1.f));
 
 	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
 	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);

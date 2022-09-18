@@ -44,7 +44,10 @@ void CTimeMgr::update()
 
 	++m_iCallCount;
 	m_dAcc += m_dDT;
+}
 
+void CTimeMgr::render()
+{
 	if (m_dAcc >= 1.)
 	{
 		m_iFPS = m_iCallCount;

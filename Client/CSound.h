@@ -3,5 +3,9 @@
 class CSound :
     public CRes
 {
+
+public:
+    CSound();
+    ~CSound();
 };
 
