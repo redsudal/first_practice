@@ -12,6 +12,8 @@
 #include "CResourceMgr.h"
 #include "CTexture.h"
 
+#include "CCollider.h"
+
 CPlayer::CPlayer()
 	: m_pTex(nullptr)
 {
@@ -57,15 +59,15 @@ void CPlayer::update()
 	}
 	if (KEY_TAP(KEY::RIGHT))
 	{
-		CreateMissileFront();
+		CreateMissileRightSide();
 	}
 	if (KEY_TAP(KEY::DOWN))
 	{
-		CreateMissileFront();
+		CreateMissileDownSide();
 	}
 	if (KEY_TAP(KEY::LEFT))
 	{
-		CreateMissileFront();
+		CreateMissileLeftSide();
 	}
 
 	SetPos(vPos);
@@ -85,6 +87,10 @@ void CPlayer::render(HDC _dc)
 		, m_pTex->GetDC()
 		, 0, 0, iWidth, iHeight
 		, RGB(255, 255, 0));
+
+	component_render(_dc);
+
+	GetCollider()->SetScale(Vec2(80.f, 80.f));
 }
 
 void CPlayer::CreateMissileFront()
@@ -109,7 +115,21 @@ void CPlayer::CreateMissileRightSide()
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
 	pMissile->SetScale(Vec2(25.f, 25.f));
-	pMissile->SetDir(Vec2(1.f, 1.f));
+	pMissile->SetDir(Vec2(1.f, 0.f));
+
+	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
+	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);
+}
+
+void CPlayer::CreateMissileDownSide()
+{
+	Vec2 vMissilePos = GetPos();
+	vMissilePos.y -= GetScale().y / 2.f;
+
+	CMissile* pMissile = new CMissile;
+	pMissile->SetPos(vMissilePos);
+	pMissile->SetScale(Vec2(25.f, 25.f));
+	pMissile->SetDir(Vec2(0.f, -1.f));
 
 	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
 	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);
@@ -123,7 +143,7 @@ void CPlayer::CreateMissileLeftSide()
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
 	pMissile->SetScale(Vec2(25.f, 25.f));
-	pMissile->SetDir(Vec2(-1.f, 1.f));
+	pMissile->SetDir(Vec2(-1.f, 0.f));
 
 	CScene* pCurSce = CSceneMgr::GetInst()->GetCurScene();
 	pCurSce->AddObject(pMissile, GROUP_TYPE::DEFAULT);

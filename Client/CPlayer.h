@@ -13,6 +13,7 @@ private:
     void CreateMissileFront();
     void CreateMissileRightSide();
     void CreateMissileLeftSide();
+    void CreateMissileDownSide();
 
 public:
     virtual void update();
