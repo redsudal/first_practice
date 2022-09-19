@@ -5,5 +5,8 @@ class CWall :
 {
 public:
     void update();
+
+public:
+
 };
 

@@ -17,6 +17,8 @@ CPlayer::CPlayer()
 {
 	// Texture 로딩하기
 	m_pTex = CResourceMgr::GetInst()->LoadTexture(L"PlayerTex", L"Texture\\player.bmp");
+
+	CreateCollider();
 }
 
 CPlayer::~CPlayer()
@@ -49,11 +51,21 @@ void CPlayer::update()
 		vPos.x += 200.f * fDT;
 	}
 
-	if (KEY_TAP(KEY::UP)/* || KEY_HOLD(KEY::UP)*/)
+	if (KEY_TAP(KEY::UP))
 	{
 		CreateMissileFront();
-		CreateMissileRightSide();
-		CreateMissileLeftSide();
+	}
+	if (KEY_TAP(KEY::RIGHT))
+	{
+		CreateMissileFront();
+	}
+	if (KEY_TAP(KEY::DOWN))
+	{
+		CreateMissileFront();
+	}
+	if (KEY_TAP(KEY::LEFT))
+	{
+		CreateMissileFront();
 	}
 
 	SetPos(vPos);

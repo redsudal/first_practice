@@ -8,6 +8,7 @@ CMonster::CMonster()
 	,m_vCenterPos{Vec2(0.f, 0.f)}
 	,m_iDir(1)
 {
+	CreateCollider();
 }
 
 CMonster::~CMonster()
