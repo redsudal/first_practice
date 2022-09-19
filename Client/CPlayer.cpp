@@ -21,6 +21,8 @@ CPlayer::CPlayer()
 	m_pTex = CResourceMgr::GetInst()->LoadTexture(L"PlayerTex", L"Texture\\player.bmp");
 
 	CreateCollider();
+	GetCollider()->SetScale(Vec2(50.f, 50.f));
+	GetCollider()->SetOffsetPos(Vec2(0.f, 0.f));
 }
 
 CPlayer::~CPlayer()
@@ -90,7 +92,7 @@ void CPlayer::render(HDC _dc)
 
 	component_render(_dc);
 
-	GetCollider()->SetScale(Vec2(80.f, 80.f));
+
 }
 
 void CPlayer::CreateMissileFront()
@@ -110,7 +112,7 @@ void CPlayer::CreateMissileFront()
 void CPlayer::CreateMissileRightSide()
 {
 	Vec2 vMissilePos = GetPos();
-	vMissilePos.y -= GetScale().y / 2.f;
+	vMissilePos.x += GetScale().x / 2.f;
 
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
@@ -124,7 +126,7 @@ void CPlayer::CreateMissileRightSide()
 void CPlayer::CreateMissileDownSide()
 {
 	Vec2 vMissilePos = GetPos();
-	vMissilePos.y -= GetScale().y / 2.f;
+	vMissilePos.y += GetScale().y / 2.f;
 
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);
@@ -138,7 +140,7 @@ void CPlayer::CreateMissileDownSide()
 void CPlayer::CreateMissileLeftSide()
 {
 	Vec2 vMissilePos = GetPos();
-	vMissilePos.y -= GetScale().y / 2.f;
+	vMissilePos.x -= GetScale().x / 2.f;
 
 	CMissile* pMissile = new CMissile;
 	pMissile->SetPos(vMissilePos);

@@ -28,7 +28,7 @@ enum class GROUP_TYPE
 {
 	DEFAULT,
 	PLAYER,
-	MISSILBE,
+	MISSILE,
 	MONSTER,
 
 

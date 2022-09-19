@@ -2,6 +2,8 @@
 #include "CMonster.h"
 #include "CTimeMgr.h"
 
+#include "CCollider.h"
+
 CMonster::CMonster()
 	:m_fSpeed(100.f)
 	,m_fMaxDistance(50.f)
@@ -9,6 +11,7 @@ CMonster::CMonster()
 	,m_iDir(1)
 {
 	CreateCollider();
+	GetCollider()->SetScale(Vec2(70.f, 70.f));
 }
 
 CMonster::~CMonster()
